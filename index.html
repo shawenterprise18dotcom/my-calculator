@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rainbow Calculator</title>
+  <meta name="description" content="A beautiful, colorful, fully functional calculator web app." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <main class="app">
+    <header class="app-header">
+      <h1 class="brand"><span class="brand-icon">🧮</span> Rainbow Calc</h1>
+      <div class="theme-picker" role="group" aria-label="Choose color theme">
+        <button class="theme-dot theme-sunset active" data-theme="sunset" title="Sunset" aria-label="Sunset theme"></button>
+        <button class="theme-dot theme-ocean" data-theme="ocean" title="Ocean" aria-label="Ocean theme"></button>
+        <button class="theme-dot theme-candy" data-theme="candy" title="Candy" aria-label="Candy theme"></button>
+        <button class="theme-dot theme-forest" data-theme="forest" title="Forest" aria-label="Forest theme"></button>
+        <button class="theme-dot theme-galaxy" data-theme="galaxy" title="Galaxy" aria-label="Galaxy theme"></button>
+      </div>
+    </header>
+
+    <section class="calculator" aria-label="Calculator">
+      <div class="display" aria-live="polite">
+        <div class="expression" id="expression">&nbsp;</div>
+        <div class="result" id="result">0</div>
+      </div>
+
+      <div class="keys">
+        <button class="key key-func" data-action="clear" aria-label="All clear">AC</button>
+        <button class="key key-func" data-action="backspace" aria-label="Backspace">⌫</button>
+        <button class="key key-func" data-action="percent" aria-label="Percent">%</button>
+        <button class="key key-op" data-action="operator" data-value="/" aria-label="Divide">÷</button>
+
+        <button class="key key-num" data-action="digit" data-value="7">7</button>
+        <button class="key key-num" data-action="digit" data-value="8">8</button>
+        <button class="key key-num" data-action="digit" data-value="9">9</button>
+        <button class="key key-op" data-action="operator" data-value="*" aria-label="Multiply">×</button>
+
+        <button class="key key-num" data-action="digit" data-value="4">4</button>
+        <button class="key key-num" data-action="digit" data-value="5">5</button>
+        <button class="key key-num" data-action="digit" data-value="6">6</button>
+        <button class="key key-op" data-action="operator" data-value="-" aria-label="Subtract">−</button>
+
+        <button class="key key-num" data-action="digit" data-value="1">1</button>
+        <button class="key key-num" data-action="digit" data-value="2">2</button>
+        <button class="key key-num" data-action="digit" data-value="3">3</button>
+        <button class="key key-op" data-action="operator" data-value="+" aria-label="Add">+</button>
+
+        <button class="key key-func" data-action="negate" aria-label="Toggle sign">±</button>
+        <button class="key key-num" data-action="digit" data-value="0">0</button>
+        <button class="key key-num" data-action="decimal" aria-label="Decimal point">.</button>
+        <button class="key key-equals" data-action="equals" aria-label="Equals">=</button>
+      </div>
+    </section>
+
+    <section class="history" aria-label="Calculation history">
+      <div class="history-header">
+        <h2>History</h2>
+        <button class="history-clear" id="history-clear" type="button">Clear</button>
+      </div>
+      <ul class="history-list" id="history-list">
+        <li class="history-empty">No calculations yet ✨</li>
+      </ul>
+    </section>
+
+    <p class="hint">Tip: use your keyboard — digits, <kbd>+</kbd> <kbd>-</kbd> <kbd>*</kbd> <kbd>/</kbd>, <kbd>Enter</kbd>, <kbd>Backspace</kbd>, <kbd>Esc</kbd></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
